@@ -18,3 +18,5 @@
  > [Sequelize (ORM)](https://sequelize.org/)
 
  Done as a project for the first exam of the subject _Information systems_.
+
+Don't forget to ```npm install``` and ```ng serve```. :ok_hand:
