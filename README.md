@@ -6,7 +6,7 @@
  Otaku e-commerce store made in Angular + NodeJS + Postgres inspired by: [J-List](https://jlist.com/) and [Tokyo Otaku Mode](https://otakumode.com/)
 
 <div align="center">
-	<img width="450"  src="images/collage.png" alt="Screenshots">
+	<img width="800"  src="images/collage.png" alt="Screenshots">
 </div>
 
 
