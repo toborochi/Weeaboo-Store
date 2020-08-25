@@ -1,0 +1,39 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "true"><p style="color: white" > Cargando </p></ngx-spinner>
+
+<div  class="image-flex"  >
+
+<div fxFlex="100%" style="margin: 4px" >
+<div fxLayout="row" fxLayout="row wrap" fxLayoutAlign="center stretch">
+  <mat-card style="width: 100%; height: 100%" class="card-margin" fxFlex.sm="0 1 calc(100%-10px)" fxFlex.md="0 1 calc(35%-10px)" fxFlex.gt-md="0 1 calc(35%-10px)"  [style.backgroundColor]="'#ffffff'" >
+
+    <img mat-card-image src="{{product?.image_url}}">
+  </mat-card>
+  <mat-card class="card-margin" style="width: 100%; height: 50%;"  fxFlex.sm="0 1 calc(100%-10px)" fxFlex.md="0 1 calc(35%-10px)" fxFlex.gt-md="0 1 calc(35%-10px)">
+    <mat-card-title  >{{product?.name}}</mat-card-title>
+    <mat-card-content [style.color]="'#ffffff'" >
+      {{product?.description}}
+      <p class="mat-display-2">
+        <mat-icon >attach_money</mat-icon> {{product?.price}} BOB.
+      </p>
+      <div fxLayout="column" fxLayoutGap="16px" >
+        <mat-chip-list>
+          <mat-chip>
+            Stock: {{product?.stock}}
+          </mat-chip>
+        </mat-chip-list>
+      <mat-form-field color="accent" appearance="outline" >
+        <input [min]="1" [max]="product?.stock?product.stock:99 " #quantity  value="{{product?.stock >= 1 ? 1 : 0}}" matInput placeholder="Cantidad">
+        <mat-icon matSuffix>verified</mat-icon>
+      </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions  fxLayout="row" fxLayoutAlign="start stretch" >
+      <button (click)="addToCart(product?.id)" fxFill  mat-raised-button [style.backgroundColor]="'#36dc93'">
+        Añadir al Carro <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,43 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "true"><p style="color: white" > Cargando </p></ngx-spinner>
+
+
+<div class="form-wraper" fxFill fxLayout="column" fxLayoutAlign="space-evenly center"  *ngIf="orders===undefined || orders.length===0">
+  <div  fxLayout="column" fxLayoutAlign="start center" >
+    <div class="bubble4" fxLayout="column" fxLayoutAlign="center center"  >
+      <p style="text-align: center; color: black">
+        <b>Visita el catálogo </b><br><b>para realizar pedidos.</b>
+      </p>
+    </div>
+    <div style="height: 32px">
+
+    </div>
+    <img width="250px" src="./assets/ChinoThink.png">
+  </div>
+
+
+
+
+</div>
+
+ <div class="form-wraper" >
+  <div fxLayout="column" fxLayoutGap="4px" class="form-container" *ngIf="orders!=undefined && orders.length>=1">
+    <mat-card fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="10px" [style.backgroundColor]="'#F44336'" >
+      <b>Pedidos Previos</b> <mat-icon> storage</mat-icon>
+    </mat-card>
+
+    <mat-card *ngFor="let order of orders; let i = index" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="10px">
+      <div  fxLayoutAlign="start center" >
+          <b>Fecha: </b>{{" "+order.date_created}}
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="mat-headline" fxLayoutAlign="space-around center" style="margin-bottom: 0px">
+        {{order.sales_price}}<p class="mat-caption">BOB.</p>
+      </div>
+        <div fxLayoutGap="6px">
+      <button mat-raised-button [style.backgroundColor]="'#e53fd9'" (click)="showStatus(order)" >Estado</button>
+      <button mat-raised-button [style.backgroundColor]="'#2ec0c2'" (click)="orderDetail(order.shopping_cartid)">Detalle</button>
+        </div>
+      </div>
+    </mat-card>
+</div>
+ </div>

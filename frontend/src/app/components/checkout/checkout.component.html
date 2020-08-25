@@ -1,0 +1,49 @@
+<div class="form-wraper">
+
+  <div fxLayout="column" fxLayoutGap="4px" class="form-container">
+    <mat-card [style.backgroundColor]="'#F44336'" class="mat-headline">
+      <b>Checkout ({{cartTotal}} BOB.)</b>
+    </mat-card>
+    <mat-card [style.backgroundColor]="'#212121'">
+      <b>Seleccione Dirección</b>
+    </mat-card>
+<mat-selection-list #direction [multiple]="false" style="padding-top: 0px">
+
+  <mat-card>
+  <mat-list-option  *ngFor="let address of addresses" [value]="address" fxFill >
+
+      <div fxLayout="row" fxLayoutAlign="space-between stretch"  fxLayoutGap="8px" style="margin: 10px">
+        <div>
+          <b>{{address.street+', '+address.city+', '+address.country}}</b>
+        </div>
+      </div>
+  </mat-list-option>
+    </mat-card>
+</mat-selection-list>
+    <mat-card [style.backgroundColor]="'#212121'" fxLayout="row" fxLayoutAlign="space-between center" >
+      <b>Seleccione Método de Pago</b>
+      <mat-slide-toggle  [(ngModel)]="isChecked" name="tarjeta">Tarjeta</mat-slide-toggle>
+    </mat-card>
+    <mat-card >
+      <mat-selection-list #paymentMethod [multiple]="false" fxLayoutGap="8px" >
+      <mat-list-option *ngFor="let method of methods" [value]="method" fxFill >
+
+        <div fxLayoutAlign="start start" fxLayout="column"  fxLayoutGap="8px" style="margin: 10px">
+
+          <div><b>Número:</b> {{' '+method.card_number}}</div>
+          <div><b>Año Expiración: </b> {{' '+method.exp_year}}</div>
+          <div><b>Mes Expiración: </b> {{' '+method.exp_month}}</div>
+          <div><b>CVC: </b> {{' '+method.cvc}}</div>
+
+        </div>
+
+      </mat-list-option>
+      </mat-selection-list>
+    </mat-card>
+    <button (click)="proceedPayment(direction.selectedOptions.selected[0]?.value,paymentMethod.selectedOptions.selected[0]?.value || -1)" mat-raised-button class="mat-title" [style.backgroundColor]="'#36dc93'">
+      Pagar {{cartTotal}} BOB.
+    </button>
+</div>
+
+
+</div>

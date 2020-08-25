@@ -1,0 +1,79 @@
+<h2 mat-dialog-title>Estado del Pedido</h2>
+<mat-vertical-stepper  #stepper>
+  <ng-template matStepperIcon="edit" >
+    <mat-icon  >done</mat-icon>
+  </ng-template>
+
+  <mat-step>
+
+
+    <ng-template matStepLabel>
+      <p>
+        <b>En Proceso</b> <br>
+        Fecha: {{data.date_created}}
+      </p>
+
+
+
+    </ng-template>
+    <p *ngIf="data.date_created===null"> El paquete aun no ha sido procesado.</p>
+    <p *ngIf="data.date_created!=null"> El paquete fue procesado en fecha {{data.date_created}}</p>
+
+  </mat-step>
+  <mat-step >
+
+    <ng-template matStepLabel>
+      <p *ngIf="data.date_dispatched!=null">
+        <b>Despachado</b> <br>
+        Fecha: {{data.date_dispatched}}
+      </p>
+      <p *ngIf="data.date_dispatched===null">
+        <b>Despachado</b> <br>
+        Fecha: PENDIENTE
+      </p>
+    </ng-template>
+
+    <p *ngIf="data.date_dispatched===null"> El paquete aun no ha sido despachado.</p>
+    <p *ngIf="data.date_dispatched!=null"> El paquete fue despachado en fecha {{data.date_dispatched}}</p>
+
+
+  </mat-step>
+  <mat-step >
+
+    <ng-template matStepLabel>
+      <p *ngIf="data.date_delivered!=null">
+        <b>En Camino</b> <br>
+        Fecha: {{data.date_delivered}}
+      </p>
+      <p *ngIf="data.date_delivered===null">
+        <b>En Camino</b> <br>
+        Fecha: PENDIENTE
+      </p>
+    </ng-template>
+
+    <p *ngIf="data.date_delivered ===null"> El paquete aun no esta en camino.</p>
+    <p *ngIf="data.date_delivered!=null"> El paquete fue enviado en fecha {{data.date_delivered}}</p>
+
+
+  </mat-step>
+  <mat-step>
+
+    <ng-template matStepLabel>
+      <p *ngIf="data.date_received!=null">
+        <b>Recibido</b> <br>
+        Fecha: {{data.date_received}}
+      </p>
+      <p *ngIf="data.date_received===null">
+        <b>Recibido</b> <br>
+        Fecha: PENDIENTE
+      </p>
+    </ng-template>
+
+    <p *ngIf="data.date_received ===null"> El paquete aun no fue recibido.</p>
+    <p *ngIf="data.date_received!=null"> El paquete fue recibido en fecha {{data.date_received}}</p>
+
+
+
+
+  </mat-step>
+</mat-vertical-stepper>

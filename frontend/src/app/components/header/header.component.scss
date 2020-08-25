@@ -1,0 +1,37 @@
+.flexExpand {
+  flex: 1 1 auto;
+}
+
+.search-container {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.search-flex{
+  width: 100%;
+}
+
+.image-flex{
+  width: 100%;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+.example-ripple-container {
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+

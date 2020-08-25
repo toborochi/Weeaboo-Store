@@ -1,0 +1,65 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "true"><p style="color: white" > Cargando </p></ngx-spinner>
+
+<div class="form-wraper" *ngIf="!authOk()">
+
+  <div class="form-container card">
+    <mat-tab-group mat-stretch-tabs >
+      <mat-tab label="Registrar">
+    <div class="form-header">
+      <img src="./assets/shopping-cart.svg"  class="main-lock-icon" alt="">
+    </div>
+
+    <div class="form-body">
+      <mat-form-field class="justifier" appearance="outline" color="accent">
+        <mat-label>Correo</mat-label>
+        <input [(ngModel)]="email" type="email" matInput placeholder="ejemplo@email.com" autocomplete="off">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="justifier" appearance="outline" color="accent">
+        <mat-label>Contraseña</mat-label>
+        <input [(ngModel)]="passwd" type="password" matInput placeholder="contraseña" autocomplete="off">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="form-footer">
+      <button mat-raised-button class="btn custom-btn" (click)="registerUser(email,passwd)">
+        <mat-icon>input</mat-icon> Registrarse
+      </button>
+      <button mat-raised-button class="btn custom-btn2">
+        <img src="./assets/search.svg" alt="" class="google-icon"> Registrarse con Google
+      </button>
+    </div>
+      </mat-tab>
+      <mat-tab label="Iniciar">
+        <div class="form-header">
+          <img src="./assets/car-key.svg"  class="main-lock-icon" alt="">
+        </div>
+
+        <div class="form-body">
+          <mat-form-field class="justifier" appearance="outline" color="accent">
+            <mat-label>Correo</mat-label>
+            <input [(ngModel)]="email" type="email" matInput placeholder="ejemplo@email.com">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="justifier" appearance="outline" color="accent">
+            <mat-label>Contraseña</mat-label>
+            <input [(ngModel)]="passwd" type="password" matInput placeholder="contraseña">
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="form-footer">
+          <button mat-raised-button class="btn custom-btn" (click)="loginUser(email,passwd)">
+            <mat-icon>input</mat-icon> Iniciar
+          </button>
+          <button mat-raised-button class="btn custom-btn2">
+            <img src="./assets/search.svg" alt="" class="google-icon"> Iniciar con Google
+          </button>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+</div>
+<app-profile *ngIf="authOk()"> </app-profile>

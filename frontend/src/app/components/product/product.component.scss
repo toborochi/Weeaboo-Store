@@ -1,0 +1,45 @@
+
+
+.card-margin{
+  margin: 16px;
+}
+
+.mat-chip {
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+
+
+.square .content {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.jh-number-picker{
+  display: inline-block;
+  border: 1px solid #d7d7d7;
+  border-radius: 2px;
+}
+
+.jh-number-picker--btn{
+  display: inline-block;
+  outline:0;
+  cursor: pointer;
+  background: #eeeeee;
+  border: none;
+  padding: 10px;
+}
+
+.jh-number-picker--value{
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+  padding: 7px;
+}

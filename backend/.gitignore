@@ -1,0 +1,4 @@
+/app/credentials.json
+/app/credential.json
+/node_modules
+.env

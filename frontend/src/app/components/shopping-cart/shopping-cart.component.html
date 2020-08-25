@@ -1,0 +1,76 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "true"><p style="color: white" > Cargando </p></ngx-spinner>
+
+<div class="form-wraper" fxFill fxLayout="column" fxLayoutAlign="space-evenly center"  *ngIf="cartData.data[0].numItems===0">
+  <div  fxLayout="column" fxLayoutAlign="start center" >
+    <div class="bubble4" fxLayout="column" fxLayoutAlign="center center"  >
+        <p style="text-align: center; color: black">
+          <b>Parece que aún no has seleccionado productos.</b>
+        </p>
+    </div>
+    <div style="height: 32px">
+
+    </div>
+    <img width="250px" src="./assets/ChinoThink.png">
+  </div>
+</div>
+
+<mat-accordion class="form-wraper example-headers-align" *ngIf="cartData.data[0].numItems!==0">
+
+  <div fxLayout="column" fxLayoutGap="4px" class="form-container">
+    <mat-card fxLayout="row" fxLayoutAlign="space-between stretch" [style.backgroundColor]="'#F44336'" >
+      <div fxLayoutAlign="center center">
+        <b>Carrito de Compras</b>
+      </div>
+       <mat-icon>shopping_cart</mat-icon>
+    </mat-card>
+
+
+    <mat-expansion-panel  *ngFor="let data of cartData.data; let i = index">
+
+      <mat-expansion-panel-header >
+        <mat-panel-title>
+          <b>COD: &nbsp; </b> {{' '+data.product.code}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div  fxLayout="column" fxLayoutGap="8px">
+        <div fxLayout="row" fxLayoutAlign="space-between center"  fxFill fxLayoutGap="8px">
+          <div fxLayoutAlign="center center">
+            <b>{{data.product.name}}</b>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center"  fxLayoutGap="8px">
+          <button mat-mini-fab (click)="deleteProduct(i)" color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+          </div>
+        </div>
+        <mat-chip-list>
+          <mat-chip>Cantidad: {{data.numItems}}</mat-chip>
+        </mat-chip-list>
+      </div>
+
+    </mat-expansion-panel>
+  <mat-expansion-panel [style.backgroundColor]="'#212121'"  hideToggle="true">
+    <mat-expansion-panel-header  [style.backgroundColor]="'#212121'" >
+      <mat-panel-title [style.color]="'#FFF'"  fxLayout="row" fxLayoutAlign="start center"  fxLayoutGap="8px">
+        <div fxLayoutAlign="center center">
+          <b>Proceder al Pago</b>
+        </div>
+        <mat-icon>money</mat-icon>
+        <mat-chip-list>
+          <mat-chip [style.backgroundColor]="'#36dc93'" >
+            <div fxLayoutAlign="center center" >
+              {{cartData.total}} BOB.
+            </div>
+          </mat-chip>
+        </mat-chip-list>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    Total a pagar {{cartData.data.length}} Item(s):
+    <p class="mat-title">
+      <mat-icon >attach_money</mat-icon> {{cartData.total}} BOB.
+    </p>
+    <button (click)="proceedBuy()" [style.backgroundColor]="'#36dc93'" style="width: 100%" mat-raised-button >Continuar</button>
+  </mat-expansion-panel>
+  </div>
+  </mat-accordion>
+

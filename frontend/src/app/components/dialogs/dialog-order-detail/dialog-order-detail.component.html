@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Total: {{data.sales_price}} BOB.</h2>
+<h3 mat-dialog-title>Fecha: {{data.date_created}}</h3>
+<div  fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="10px">
+  <mat-card *ngFor="let prod of data.products" fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="10px">
+    <div><b>{{prod.name}}</b> x{{prod.items.amount}}</div>
+    <div><b>Costo:</b> {{prod.items.final_price}}BOB.</div>
+  </mat-card>
+</div>

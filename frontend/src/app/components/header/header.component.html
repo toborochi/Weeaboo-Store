@@ -1,0 +1,37 @@
+<mat-toolbar  class="mat-elevation-z8">
+  <mat-toolbar-row>
+    <button mat-icon-button class="example-icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img routerLink="" src="./assets/weeaboologo.svg">
+    <span class="flexExpand"></span>
+
+    <button mat-icon-button>
+      <mat-icon matBadgeColor="warn" routerLink="/orders">local_shipping</mat-icon>
+    </button>
+
+    <button mat-icon-button routerLink="/shopping_cart">
+      <mat-icon matBadge="{{getProducts()}}" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="login()">
+      <mat-icon>person</mat-icon>
+    </button>
+
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="search-container" style="z-index: 20">
+    <mat-form-field appearance="outline" floatLabel="never" color="accent" class="search-flex">
+      <mat-label>Buscar</mat-label>
+      <input type="search" autocomplete="off" matInput placeholder="Producto" (keydown.enter)="printear($event)">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-grid-tile>
+
+    </mat-grid-tile>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+

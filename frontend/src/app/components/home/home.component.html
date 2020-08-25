@@ -1,0 +1,44 @@
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "true"><p style="color: white" > Cargando </p></ngx-spinner>
+<div  class="image-flex"  >
+  <carousel  cellWidth="100%" objectFit="cover" arrows=false height="100%" [images]="images">
+    <img style="z-index: 0"  src="./assets/banner_megumin.png">
+  </carousel>
+</div>
+
+
+
+<mat-toolbar class="mat-elevation-z8 " fxLayoutAlign="center center" >
+  <img  src="./assets/promoslogo.svg">
+</mat-toolbar>
+
+
+<div class="mat-app-background">
+<div class="content" fxLayout="row wrap" fxLayoutGap="2px grid">
+  <div class="layout-row" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let prod of products" >
+    <mat-card class="mat-elevation-z8" [style.backgroundColor]="'#ffffff'"  >
+      <mat-card-header style="height: 96px">
+        <mat-card-title [style.color]="'#444444'">
+          <p>
+          <i>{{prod?.name}}</i>
+          </p>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{prod.image_url}}">
+      <mat-card-content style="height: 64px" [style.color]="'#444444'" fxLayoutAlign="stretch" class="mat-card-content " >
+        <p class="text">
+        {{prod?.description}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button fxFill mat-raised-button [style.backgroundColor]="'#36dc93'" (click)="selectProduct(prod?.id)">
+          Comprar <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+</div>
+
+

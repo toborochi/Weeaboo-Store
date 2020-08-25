@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Dirección</h2>
+<mat-dialog-content>
+  <div fxLayout="column" fxLayoutAlign="space-around center" >
+    <mat-form-field color="accent">
+      <mat-label>Calle</mat-label>
+      <input [(ngModel)]="data.street" matInput placeholder="Calle o Avenida">
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>Ciudad</mat-label>
+      <input [(ngModel)]="data.city" matInput placeholder="Ciudad">
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>País</mat-label>
+      <input [(ngModel)]="data.country" matInput placeholder="País">
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>Cod. Postal</mat-label>
+      <input [(ngModel)]="data.postcode" matInput placeholder="0000">
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions  fxLayout="row" fxLayoutAlign="space-around center">
+  <button mat-button [mat-dialog-close]="data"  >Crear</button>
+  <button mat-button (click)="closeDialog()" >Cancelar</button>
+</mat-dialog-actions>

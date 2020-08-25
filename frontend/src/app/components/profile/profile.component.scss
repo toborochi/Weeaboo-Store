@@ -1,0 +1,312 @@
+table {
+  width: 100%;
+}
+
+.bg-dashboard{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+::ng-deep .mat-ink-bar {
+  background-color:#FFF !important;
+}
+
+
+
+.bubble {
+  position: relative;
+  width: 200px;
+  height: 80px;
+  background: white;
+  border-radius: 10px;
+}
+
+.bubble4 {
+  @extend .bubble;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 13px solid transparent;
+    border-top-color: white;
+    border-bottom: 0;
+    margin-left: -13px;
+    margin-bottom: -13px;
+  }
+}
+
+table {
+  text-align: center !important;
+  width: 100%;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+  .mat-table {
+    border: 0;
+    vertical-align: middle
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+
+  /*  Enable this to hide header*/
+  .mat-table .mat-header-cell {
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .mat-table .mat-row {
+    border-bottom: 5px solid #ddd;
+    display: block;
+  }
+  /*
+  .mat-table .mat-row:nth-child(even) {background: #CCC}
+  .mat-table .mat-row:nth-child(odd) {background: #FFF}
+  */
+  .mat-table .mat-cell {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    font-weight: bold;
+    height: 100%;
+    margin-bottom: 4%;
+    padding: 0 24px;
+  }
+  .mat-table .mat-cell:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: normal;
+
+    font-size: .85em;
+  }
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+  }
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  margin:0px !important;
+  overflow: hidden;
+}
+.add-btn{
+  position: fixed;
+  right: 25px;
+  bottom: 20Px;
+}
+
+/** form **/
+.form-wraper{
+  width: 100%;
+  margin-top: 2%;
+  padding: 20px;
+}
+.form-container{
+  width: 50%;
+  margin: auto;
+  padding-bottom: 24px !important;
+  display: block;
+}
+
+.form-container2{
+  width: 20%;
+  margin: auto;
+  padding-bottom: 24px !important;
+  display: block;
+}
+
+.card {
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+/** form header **/
+.form-header{
+  padding: 24px 0;
+}
+.form-title{
+  text-align: center;
+  font-weight: 200;
+  font-size: 2.5em;
+}
+.main-lock-icon{
+  width: 20%;
+  margin: 5px auto;
+  display: block;
+}
+
+/** form body **/
+.form-body{
+  padding: 0 24px;
+}
+.justifier {
+  width: 100%;
+}
+.form-input{
+  margin-top: 24px;
+}
+
+/** form footer **/
+.form-footer{
+  padding: 24px;
+}
+.btn{
+  display: block;
+  width: 100%;
+  padding: 5% !important;
+  font-size: 1.5em;
+  font-weight: 200;
+  margin-top: 18px;
+}
+.custom-btn{
+  margin-bottom: 15px;
+  background: #FF004D;
+  color: #fff;
+}
+
+.custom-btn2{
+  margin-bottom: 15px;
+  background: white;
+  color: black;
+}
+.google-icon{
+  width: 6%;
+}
+.txt{
+  text-align: center;
+  color: #333;
+  margin: 10px auto !important;
+}
+.additional-link{
+  padding: 50px;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: rgb(42, 125, 219);
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 24px !important;
+    display: block;
+  }
+  .btn{
+    font-size: 1em;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+
+ */
+@media (min-width: 481px) and (max-width: 767px) {
+  .form-container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 24px !important;
+    display: block;
+  }
+  .btn{
+    font-size: 1em;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .form-container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 24px !important;
+    display: block;
+  }
+  .btn{
+    font-size: 1em;
+  }
+}
+
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: mediumseagreen;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit{
+  background-color: mediumseagreen;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
